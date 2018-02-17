@@ -1,8 +1,11 @@
 const express = require('express')
 const pg = require('pg');
-
+const bodyParser = require("body-parser");
 var app = express();
 app.set('port', (process.env.PORT || 5000));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
 
@@ -24,6 +27,13 @@ app.get('/db', function (request, response) {
        { response.render('pages/helloworld', {results: result.rows} ); }
     });
   });
+});
+
+app.post('/db',function(req,res){
+  var location=req.body.location;
+  var temperature=req.body.temperature;
+  console.log("location = "+location+", temperature is "+temperature);
+  res.end("yes");
 });
 
 app.listen(app.get('port'), function() {

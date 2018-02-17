@@ -6,9 +6,6 @@
 
 <body>
     <p>Hello world</p>
-    <% if(results) { %>
-    <% results.forEach(function(r) { %>
-      <li><%= r.id %> - <%= r.location %>: <%= r.temperature%>, <%= r.timestamp%></li>
-    <% });} %>
+    <% include ../partials/weather_form.ejs %>
 </body>
 </html>
