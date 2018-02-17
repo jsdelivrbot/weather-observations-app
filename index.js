@@ -29,11 +29,20 @@ app.get('/db', function (request, response) {
   });
 });
 
-app.post('/db',function(req,res){
+app.post('/weather_observation',function(req,res){
   var location=req.body.location;
   var temperature=req.body.temperature;
+  var timestamp = new Date();
   console.log("location = "+location+", temperature is "+temperature);
-  res.end("yes");
+
+  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('INSERT INTO weather_observation (location, temperature, timestamp) VALUES ($1, $2, $3)', [location, temperature, timestamp],function(err, result) {
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+    });
+    res.end("yes");
+  });
 });
 
 app.listen(app.get('port'), function() {
