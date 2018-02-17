@@ -1,11 +1,17 @@
-<form id="weather_form" action="/db" method="post">
-    location: <select name="location" required>
-        <option value="helsinki">Helsinki</option>
-        <option value="tokio">Tokio</option>
-        <option value="new york">New York</option>
-        <option value="amsterdam">Amsterdam</option>
-        <option value="dubai">Dubai</option>
-    </select><br>
-    temperature: <input required name="temperature" type="number"><br>
-    <input type="submit">
+<form id="weather_form" action="/weather_observation" method="post">
+    <div class="form-group">
+        <label for="weather_location">Location</label>
+        <select required name="location" class="form-control" id="weather_location">
+            <option value="helsinki">Helsinki</option>
+            <option value="tokio">Tokio</option>
+            <option value="new york">New York</option>
+            <option value="amsterdam">Amsterdam</option>
+            <option value="dubai">Dubai</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="weather_temperature">Temperature</label>
+        <input required name="temperature" id="weather_temperature" type="number" step="any" class="form-control">
+    </div>
+    <input class="btn btn-primary" type="submit" value="Submit">
 </form>
