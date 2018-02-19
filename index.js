@@ -17,7 +17,7 @@ app.get('/', function(request, response) {
 	response.render('pages/helloworld')
 });
 
-app.get('/db', function (request, response) {
+app.get('/weather_observation', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM weather_observation', function(err, result) {
       done();
