@@ -2,7 +2,6 @@ const express = require('express')
 const pg = require('pg');
 const bodyParser = require("body-parser");
 var app = express();
-var weather = require('./weather.js')
 
 app.set('port', (process.env.PORT || 5000));
 
