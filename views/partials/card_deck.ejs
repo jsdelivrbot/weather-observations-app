@@ -1,0 +1,12 @@
+<div class="card-deck">
+	<% for(var location in locations) { %>
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title"><%= location %></h5>
+			<p class="card-text">Latest: <%= locations[location]["latest"] %></p>
+			<p class="card-text">Max: <%= locations[location]["max"] %></p>
+			<p class="card-text">Min: <%= locations[location]["min"] %></p>
+		</div>
+	</div>
+	<% } %>
+</div>
