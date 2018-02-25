@@ -1,3 +1,6 @@
 .card-title {
     text-transform: capitalize;
 }
+#weather_form {
+    margin-bottom: 15px;
+}
