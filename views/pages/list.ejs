@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+  <div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Location</th>
+                <th scope="col">Temperature</th>
+                <th scope="col">timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% for(item in results) { %>
+            <tr>
+                <td scope="col"><%= results[item]["location"] %></td>
+                <td scope="col"><%= results[item]["temperature"] %></td>
+                <td scope="col"><%= results[item]["timestamp"] %></td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+  </div>
+</body>
+</html>
