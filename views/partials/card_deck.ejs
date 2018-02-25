@@ -2,10 +2,12 @@
 	<% for(var location in locations) { %>
 	<div class="card">
 		<div class="card-body">
-			<h5 class="card-title"><%= location %></h5>
+			<h5 class="card-title">
+				<a href=<%= "/weather_observation/"+(location.replace(" ", "%20")) %>><%= location %></a>
+			</h5>
 			<p class="card-text">Latest: <%= locations[location]["latest"] %></p>
-			<p class="card-text">Max: <%= locations[location]["max"] %></p>
-			<p class="card-text">Min: <%= locations[location]["min"] %></p>
+			<p class="card-text">Max today: <%= locations[location]["max"] %></p>
+			<p class="card-text">Min today: <%= locations[location]["min"] %></p>
 		</div>
 	</div>
 	<% } %>
