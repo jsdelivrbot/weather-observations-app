@@ -27,7 +27,7 @@ $('#weather_form').submit(function(e){
         success: function(data)
         {
             $("#weather_form")[0].reset();
-            alert("success");
+            location.reload(); 
         }
     });
 });
