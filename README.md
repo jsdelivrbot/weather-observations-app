@@ -1,2 +1,2 @@
 # weather-observations-app
-preliminary assignment
+Preliminary assignment by Lauri Koskinen.
